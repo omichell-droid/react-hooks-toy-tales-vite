@@ -1,44 +1,37 @@
-# Practice Challenge: Toy Tales
+# Toy Tales
 
-You've got a friend in need! Again!
+A full-stack CRUD application for managing a list of toys. Built with React and a JSON Server backend.
 
-Andy has misplaced of his toys (again) and need your help to organize them.
+## Description
 
-## Setup
+Toy Tales lets users view, add, like, and donate (delete) toys from a collection. This project connects a React front end to a REST API backend using fetch requests for full CRUD functionality.
 
-All the information about Andy's toys can be found in the `db.json` file. We'll
-be using `json-server` to create a RESTful API for our database.
+## Features
 
-Run `npm install` to install our dependencies.
+- **View toys**: All toys load automatically from the backend on page load.
+- **Add a toy**: Submit the form to create a new toy (likes start at 0).
+- **Like a toy**: Click "Like <3" to increase a toy's like count.
+- **Donate a toy**: Click "Donate to GoodWill" to remove a toy from the collection.
 
-Then, run `npm run server` to start up `json-server` on `http://localhost:3001`.
+## Screenshot
 
-In another tab, run `npm run dev` to start up our React app at `http://localhost:3000`.
+![Toy Tales screenshot](./screenshot.png)
 
-In another tab, run `npm run test` to run the test suite.
+## Installation
 
-Before you start building out the application, the first step that you should
-take is to examint the current code and component hierarchy. This will tell you 
-how components can pass data to each other as well as where that information should 
-be stored.
+1. Clone this repository
+2. Run `npm install` to install dependencies
+3. Run `npm run server` to start the JSON Server backend (port 3001)
+4. Run `npm run dev` to start the React development server
+5. Open the app in your browser at the local URL shown in the terminal
 
-## Deliverables
+## Testing
 
-- _When our application loads_, make a GET request to `/toys` to fetch the toy
-  array. Given your component tree, think about which component should be
-  responsible for the array. After you have put the data in the proper
-  component, your next job is to render the `ToyCard` components on the page.
+Run `npm run test` to run the test suite with Vitest.
 
-- _When the `ToyForm` is submitted_, make a POST request to `/toys` to save a
-  new toy to the server. Using the ideas of controlled form and inverse data
-  flow, think about how to render a new `ToyCard` for the toy that you created.
+## Technologies
 
-- _When the `Donate to Goodwill` button is clicked_, make a DELETE request to
-  `/toys/:id` with the ID of the toy that was clicked to delete the toy from the
-  server. The `ToyCard` that you clicked on should also be removed from the DOM.
-
-- _When the like button is clicked_, make a PATCH request to `/toys/:id` with
-  the id of the toy that was clicked, along with the new number of likes (this
-  should be sent in the body of the PATCH request, as a object:
-  `{ likes: 10 }`), to update the toy on the server. Clicking on the button
-  should also increase the number of likes on the DOM.
+- React
+- Vite
+- JSON Server
+- Vitest / React Testing Library`
